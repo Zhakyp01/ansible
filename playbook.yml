@@ -1,0 +1,20 @@
+---
+- name: Update web severs
+  hosts: all
+  remote_user: root
+
+  tasks:
+          - name: Ensure apache is at the latest version
+            ansible.builtin.apt:
+                    name: apache2
+                    state: latest
+          - name: custom index.html
+            ansible.builtin.copy:
+                    dest: /var/www/html/index.html
+                    content: |
+                            Custom Web Page
+          - name: apache servce enabled
+            ansible.builtin.service:
+                    name: apache2
+                    enabled: true
+                    state: started
