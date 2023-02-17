@@ -1,6 +1,6 @@
 all:
    hosts: 
-     35.184.255.26:
+     34.133.253.198:
         ansible_user: zhakyp_zhoomartuuluu
         ansible_connection: ssh
         ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
